@@ -12,7 +12,7 @@
 ## 使用方法
 
 ### 初次使用
-
+- docker-compose up --build -d
 
 ### 数据迁移
 

@@ -13,7 +13,7 @@ services:
     build:
       context: ./yapi-app
       args:
-        YAPI_APP_VERSION: "1.7.0"
+        YAPI_APP_VERSION: "1.8.1"
     ports:
         - "3000:3000"
     working_dir: /api/vendors
