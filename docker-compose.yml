@@ -1,0 +1,23 @@
+version: '3.7'
+services: 
+  mongo:
+    container_name: yapi-mongo
+    image: mongo:4-xenial
+    restart: always
+    volumes:
+        - "/data/docker/ypai/mongo/data/db:/data/db"   
+  yapi:
+    container_name: yapi-app
+    restart: always
+    image: azleal/yapi-app
+    build:
+      context: ./yapi-app
+      args:
+        YAPI_APP_VERSION: "1.7.0"
+    ports:
+        - "3000:3000"
+    working_dir: /api/vendors
+    depends_on:
+        - mongo
+    command: ["server/app.js"]
+     
