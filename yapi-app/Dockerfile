@@ -1,6 +1,8 @@
 FROM node:9.2-alpine as builder
 ARG YAPI_APP_VERSION=1.7.0
 
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk add --no-cache git python make openssl tar gcc
 RUN echo "YAPI_APP_VERSION is ${YAPI_APP_VERSION}"
 ADD http://registry.npm.taobao.org/yapi-vendor/download/yapi-vendor-${YAPI_APP_VERSION}.tgz /home/
