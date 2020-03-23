@@ -2,14 +2,16 @@ version: '3.7'
 services: 
   mongo:
     image: mongo:4-xenial
+    ports:
+      - 27017:27017
     volumes:
-        - mongo_data_volume:/data/db
+      - mongo_data_volume:/data/db
   yapi:
     image: azleal/yapi-app
     build:
       context: ./yapi-app
       args:
-        YAPI_APP_VERSION: "1.8.1"
+        YAPI_APP_VERSION: "1.8.8"
  #   ports:
  #      - "3000:3000"
     working_dir: /api/vendors

@@ -1,7 +1,7 @@
 {
   "port": "3000",
-  "adminAccount": "azleal",
-  "closeRegister":true,
+  "adminAccount": "mr_liyao@qq.com",
+  "closeRegister": false,
   "db": {
     "servername": "mongo",
     "DATABASE": "yapi",
